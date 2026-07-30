@@ -79,7 +79,7 @@ void SinglyLL<T> :: InsertFirst(T iNo)
         this -> first = newn;
     }
 
-    this -> iCount++;                   //Important (apan hi line if madhe pn ani else madhe pn lihali tari chalel pn donhi kade lihinyapeksha khali lihil.)
+    this -> iCount++;                   
 }
 
 template<class T>
