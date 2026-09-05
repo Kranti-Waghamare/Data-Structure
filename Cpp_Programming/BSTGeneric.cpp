@@ -169,7 +169,7 @@ int BST<T> :: Count(node<T> *first)
 template<class T>
 int BST<T> :: Count()
 {
-    Count(first);
+    return Count(first);
 }
 
 template<class T>
@@ -217,7 +217,7 @@ int BST<T> :: CountLeaf(node<T> *first)
 template<class T>
 int BST<T> :: CountLeaf()
 {
-    CountLeaf(first);
+    return CountLeaf(first);
 }
 
 template<class T>
@@ -240,7 +240,7 @@ int BST<T> :: CountParent(node<T> *first)
 template<class T>
 int BST<T> :: CountParent()
 {
-    CountParent(first);
+    return CountParent(first);
 }
 
 int main()
