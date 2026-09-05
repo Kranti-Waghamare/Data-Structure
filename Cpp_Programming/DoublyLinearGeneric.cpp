@@ -10,7 +10,7 @@ struct node
 };
 
 template<class T>
-class SinglyCL
+class DoublyLL
 {
     private : 
         struct node<T>  * first;
@@ -18,7 +18,7 @@ class SinglyCL
         int iCount;
 
     public :
-        SinglyCL();
+        DoublyLL();
         
         void Display();
         int Count();
@@ -33,7 +33,7 @@ class SinglyCL
 };
 
 template<class T>
-SinglyCL<T> :: SinglyCL()
+DoublyLL<T> :: DoublyLL()
 {
     this->first = NULL;
     this->last = NULL;
@@ -41,7 +41,7 @@ SinglyCL<T> :: SinglyCL()
 }
 
 template<class T>
-void SinglyCL<T> :: Display()
+void DoublyLL<T> :: Display()
 {
     struct node<T> * temp = NULL;
 
@@ -63,13 +63,13 @@ void SinglyCL<T> :: Display()
 }
 
 template<class T>
-int SinglyCL<T> :: Count()
+int DoublyLL<T> :: Count()
 {
     return this->iCount;
 }
 
 template<class T>
-void SinglyCL<T> :: InsertFirst(T iNo)
+void DoublyLL<T> :: InsertFirst(T iNo)
 {
     struct node<T> * newn = NULL;
     
@@ -93,7 +93,7 @@ void SinglyCL<T> :: InsertFirst(T iNo)
 }
 
 template<class T>
-void SinglyCL<T> :: InsertLast(T iNo)
+void DoublyLL<T> :: InsertLast(T iNo)
 {
     struct node<T> * newn = NULL;
     
@@ -117,7 +117,7 @@ void SinglyCL<T> :: InsertLast(T iNo)
 }
 
 template<class T>
-void SinglyCL<T> :: InsertAtPos(T iNo, int iPos)
+void DoublyLL<T> :: InsertAtPos(T iNo, int iPos)
 {
     int i = 0;
     int iCount = 0;
@@ -161,7 +161,7 @@ void SinglyCL<T> :: InsertAtPos(T iNo, int iPos)
 }
 
 template<class T>
-void SinglyCL<T> :: DeleteFirst()
+void DoublyLL<T> :: DeleteFirst()
 {
     if(this->first == NULL && this->last == NULL)
     {
@@ -183,7 +183,7 @@ void SinglyCL<T> :: DeleteFirst()
 }
 
 template<class T>
-void SinglyCL<T> :: DeleteLast()
+void DoublyLL<T> :: DeleteLast()
 {
     struct node<T> * temp = NULL;
 
@@ -214,7 +214,7 @@ void SinglyCL<T> :: DeleteLast()
 }
 
 template<class T>
-void SinglyCL<T> :: DeleteAtPos(int iPos)
+void DoublyLL<T> :: DeleteAtPos(int iPos)
 {
     int i = 0;
     int iCount = 0;
@@ -257,52 +257,52 @@ void SinglyCL<T> :: DeleteAtPos(int iPos)
 
 int main()
 {
-    SinglyCL<int> sobj;
+    DoublyLL<int> dobj;
     int iRet = 0;
 
-    sobj.InsertFirst(51);
-    sobj.InsertFirst(21);
-    sobj.InsertFirst(11);
+    dobj.InsertFirst(51);
+    dobj.InsertFirst(21);
+    dobj.InsertFirst(11);
 
-    sobj.InsertLast(101);
-    sobj.InsertLast(111);
-    sobj.InsertLast(121);
+    dobj.InsertLast(101);
+    dobj.InsertLast(111);
+    dobj.InsertLast(121);
 
-    sobj.Display();
+    dobj.Display();
 
-    iRet = sobj.Count();
-
-    cout<<"Number of nodes are : "<<iRet<<endl;
-
-    sobj.DeleteFirst();
-
-    sobj.Display();
-
-    iRet = sobj.Count();
+    iRet = dobj.Count();
 
     cout<<"Number of nodes are : "<<iRet<<endl;
 
-    sobj.DeleteLast();
+    dobj.DeleteFirst();
 
-    sobj.Display();
+    dobj.Display();
 
-    iRet = sobj.Count();
-
-    cout<<"Number of nodes are : "<<iRet<<endl;
-
-    sobj.InsertAtPos(105, 2);
-
-    sobj.Display();
-
-    iRet = sobj.Count();
+    iRet = dobj.Count();
 
     cout<<"Number of nodes are : "<<iRet<<endl;
 
-    sobj.DeleteAtPos(2);
+    dobj.DeleteLast();
 
-    sobj.Display();
+    dobj.Display();
 
-    iRet = sobj.Count();
+    iRet = dobj.Count();
+
+    cout<<"Number of nodes are : "<<iRet<<endl;
+
+    dobj.InsertAtPos(105, 2);
+
+    dobj.Display();
+
+    iRet = dobj.Count();
+
+    cout<<"Number of nodes are : "<<iRet<<endl;
+
+    dobj.DeleteAtPos(2);
+
+    dobj.Display();
+
+    iRet = dobj.Count();
 
     cout<<"Number of nodes are : "<<iRet<<endl;
 
