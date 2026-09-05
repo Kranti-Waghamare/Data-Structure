@@ -7,7 +7,7 @@ struct node
 {
     T data;
     struct node<T> * next;
-    struct node<T> * prev;;
+    struct node<T> * prev;
 };
 
 #pragma pack(1)
